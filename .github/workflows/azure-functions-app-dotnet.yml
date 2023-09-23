@@ -33,4 +33,7 @@ jobs:
         dotnet build --configuration Release --output ./output
         popd
 
+    - name: publish test results
+      uses: actions/upload-artifact@v1
+
    
