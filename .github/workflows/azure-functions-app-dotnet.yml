@@ -29,7 +29,7 @@ jobs:
     - name: 'Resolve Project Dependencies Using Dotnet'
       shell: pwsh # For Linux, use bash
       run: |
-        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        pushd '${{ github.workspace }}/${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
         dotnet build --configuration Release --output ./output
         popd
 
@@ -37,7 +37,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
             name: report
-            path: azfunctions\output\function1.dll
+            path: ${{ github.workspace }}\output\${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}.dll
       
 
    
