@@ -37,7 +37,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
             name: report
-            path: ${{ github.workspace }}\output\${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}.dll
+            path: output\function1.dll
       
 
    
