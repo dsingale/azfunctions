@@ -35,5 +35,9 @@ jobs:
 
     - name: publish test results
       uses: actions/upload-artifact@v1
+      with:
+            name: report
+            path: azfunctions\output\function1.dll
+      
 
    
